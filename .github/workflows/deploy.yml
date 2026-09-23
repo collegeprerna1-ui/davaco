@@ -21,16 +21,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: npm
-          cache-dependency-path: davaco/package-lock.json
+          node-version: 22
 
       - name: Install dependencies
-        working-directory: davaco
+        working-directory: dawaco
         run: npm ci
 
       - name: Build
-        working-directory: davaco
+        working-directory: dawaco
         run: npm run build
 
       - name: Setup Pages
@@ -39,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: davaco/dist
+          path: dawaco/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
