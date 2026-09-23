@@ -24,9 +24,11 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
+        working-directory: dawaco
         run: npm ci
 
       - name: Build
+        working-directory: dawaco
         run: npm run build
 
       - name: Setup Pages
@@ -35,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: dawaco/dist
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
